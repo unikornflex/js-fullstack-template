@@ -1,18 +1,26 @@
 README
 =====================================================
 
-
-@TODO :
+@TODO
+-----------------------------------------------------
 
 -   template engine : mustache / handlebar (share template betweeen front and back)
 -   remove jade
 -   socket.io
 -   test socket.io
 
-Install:
-git clone ...
-npm install
-bower install
+Install
+-----------------------------------------------------
+
+    git clone https://github.com/unikornflex/js-fullstack-template.git
+    npm install
+    bower install
+
+
+notes:
+
+> install bower
+>       npm install bower -g
 
 
 Sources:
