@@ -19,8 +19,7 @@ Install
 
 notes:
 
-> install bower
->       npm install bower -g
+> install bower : `npm install bower -g`
 
 
 Sources:
