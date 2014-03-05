@@ -2,13 +2,22 @@
 /*
  * GET home page.
  */
+var mongo = require('mongodb').MongoClient;
 
-exports.index = function(db) {
-    return function(req, res){
-        var yiking = db.get('hexagrammes_fr');
+exports.index = function(req, res){
+    mongo.connect('mongodb://localhost:27017/yiking', function(err, db) {
+        if (err) {
+            console.log('db error : %s', err.message);
+        }
 
-        yiking.find({}, function(err, entities) {
+        var collection = db.collection('hexagrammes_en');
+
+        collection.find().toArray(function(err, entities) {
+            if (err) {
+                console.log('collection err : %s', err.message);
+            }
+
             res.render('index', { title: 'Express', yiking: entities });
         });
-    };
+    });
 };
