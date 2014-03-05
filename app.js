@@ -6,11 +6,15 @@
 var express = require('express'),
     routes = require('./routes'),
     http = require('http'),
-    path = require('path');
+    path = require('path')
+    mongo = require('mongodb'),
+    monk = require('monk');
 
 var app = express(),
     server = http.createServer(app),
     io = require('socket.io').listen(server);
+
+var db = monk('localhost/yiking');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -30,7 +34,7 @@ if ('development' == app.get('env')) {
 }
 
 // serve static
-app.get('/', routes.index);
+app.get('/', routes.index(db));
 
 server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

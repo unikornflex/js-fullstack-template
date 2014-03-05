@@ -3,3 +3,9 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  ul
+  each entry in yiking
+    li
+        h5= entry.num + ' : ' + entry.titre
+        p= entry.texte

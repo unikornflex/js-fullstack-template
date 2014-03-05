@@ -8,6 +8,7 @@ README
 -   remove jade
 -   socket.io
 -   test socket.io
+-   test mongoose connection
 
 Install
 -----------------------------------------------------
